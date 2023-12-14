@@ -12,7 +12,6 @@
     "test-start": "start-server-and-test 'node dist/server' 3000"
   },
   "workspaces": [
-    "client",
     "server"
   ],
   "devDependencies": {
