@@ -1,5 +1,5 @@
 {
-  "name": "@examples/minimal-server",
+  "name": "@examples/node",
   "version": "10.44.1",
   "private": true,
   "dependencies": {
