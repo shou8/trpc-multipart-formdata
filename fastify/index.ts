@@ -1,4 +1,4 @@
-import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
+import { FastifyTRPCPluginOptions, fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
 import fastify from 'fastify';
 import { zfd } from 'zod-form-data'; 
 import { publicProcedure, router } from './trpc';
@@ -48,7 +48,7 @@ server.register(fastifyTRPCPlugin, {
       nodeHTTPFormDataContentTypeHandler(),
       nodeHTTPJSONContentTypeHandler(),
     ],
-  },
+  } // satisfies FastifyTRPCPluginOptions<AppRouter>['trpcOptions'],
 });
 
 (async () => {

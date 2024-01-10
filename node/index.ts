@@ -1,4 +1,4 @@
-import { createHTTPServer } from '@trpc/server/adapters/standalone';
+import { CreateHTTPHandlerOptions, createHTTPServer } from '@trpc/server/adapters/standalone';
 import { zfd } from 'zod-form-data'; 
 import { publicProcedure, router } from './trpc';
 import { formDataMiddleware } from './middleware';
@@ -38,7 +38,7 @@ const server = createHTTPServer({
   experimental_contentTypeHandlers: [
     nodeHTTPFormDataContentTypeHandler(),
     nodeHTTPJSONContentTypeHandler(),
-  ],
-});
+  ]
+} satisfies CreateHTTPHandlerOptions<AppRouter>);
 
 server.listen(3000);
